@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+body{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+}
+
+
+:root{
+    --accentColor: rgb(255, 0, 255);
+
+}
+
+form input{
+    width: 350px;
+    height: 40px;
+    text-indent: 5px;
+
+    border: var(--accentColor) solid 1px;
+
+    border-radius: 100px;
+
+
+
+
+
+}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Личный кабинет</title>
+</head>
+<body>
+
+
+{% load static %}
+<h2>Добро пожаловать, {{ user_data.name }}</h2>
+<div class = "account-container">
+    <img src="{{user.avatar.url}}" alt="Avatar" width="80px" height="80px">
+
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ user_data.form }}
+        <button type="submit" name="upload_avatar">Загрузить аватар</button>
+    </form>
+    
+    <p>Фамилия <span style="color: aqua">{{ user_data.surname }}</span></p>
+    <p>Логин: <span style="color: crimson">{{ user_data.username }}</span> </p>
+    <p>Email: {{ user_data.email }}</p>
+    <p>Кол-во бонусов Пятёрочки: {{ user_data.bonuses }}</p>
+    
+    <form method="post" action="{% url 'account' %}">
+        {% csrf_token %}
+        <p><button type="submit" name="auth" >Двухфакторная аунтефикация</button> {{ user_data.t2 }}</p>
+        <br><button type="submit" name="farm">Копить бонусы</button>
+        <button type="submit" name="change_email">Сменить email</button>
+        {% if success %}
+            <p style="color: chartreuse">Смена email почты прошла успешно!</p>
+        {% endif %}
+        <p><button type="submit" name ="exit">Выйти</button></p>
+        
+    </form>
+    <button id="toggleButton">Показать/Скрыть Панель</button>
+    <form method="post">
+        {% csrf_token %}
+          <div id="panel" style="display: none;">
+            <h2>Смена пароля</h2>
+       
+            <input type="text" name="old_pass" placeholder="Старый пароль">
+            <br><input type="text" name="new_pass" placeholder="Новый пароль">
+            <br><input type="text" name= "re_pass" placeholder="Повторите пароль">
+            <br><button type="submit">Изменить</button>
+          </div>
+        
+        
+    </form>
+  
+  
+  
+
+
+    
+</div>
+
+
+<script src="/static/script2.js"></script>
+
+
+</body>
+</html>

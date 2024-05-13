@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Двухфакторная аутентификация</title>
+    <link rel="stylesheet" href="/static/auth.css">
+</head>
+<body>
+
+<form id="codeForm" method="post">
+        
+        {% csrf_token %}
+        <p>Введите код с вашей email-почту <input type="text" name="code" id="code" required></p>
+        {% if error_occurred %}
+            <p style="color: red;">Неверный код, попробуйте ещё раз!</p>
+         {% endif %}
+       
+        <button type="submit" id="submit_code">Отправить</button>
+        
+    </form>
+</body>
+</html>

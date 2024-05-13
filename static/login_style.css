@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    display: block;
+    color-rendering: optimizeQuality;
+    image-rendering: optimizeQuality;
+    shape-rendering: geometricPrecision;
+    text-rendering: optimizeLegibility;
+    font-family: Montserrat, sans-serif;
+    position: relative;
+    color: rgb(0, 0, 0);
+}
+
+
+head {
+    display: none;
+
+}
+
+:root {
+    --accentColor: rgb(169, 59, 241);
+    --accentColorHover: rgb(188, 173, 230);
+}
+
+
+
+
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 100px;
+
+
+
+}
+
+
+form input {
+
+    width: 350px;
+    height: 40px;
+    outline: none;
+    border: var(--accentColor) solid 1px;
+    text-indent: 5px;
+
+    border-radius: 5px;
+
+}
+
+
+form button{
+    width: 200px;
+    height: 30px;
+    border: var(--accentColor) solid 1px;
+
+    border-radius: 5px;
+}
+
+form button[type="submit"]:hover {
+    background-color: var(--accentColorHover);
+    transition: 0.5s;
+
+
+}
+form button[type="submit"]{
+    font-size: 14px;
+    font-weight: 600;
+   
+
+
+}

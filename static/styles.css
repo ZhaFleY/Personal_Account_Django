@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    display: block;
+    color-rendering: optimizeQuality;
+    image-rendering: optimizeQuality;
+    shape-rendering: geometricPrecision;
+    text-rendering: optimizeLegibility;
+    font-family: Montserrat, sans-serif;
+    position: relative;
+    color: rgb(0, 0, 0);
+}
+
+*:after, *:before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    display: block;
+    color-rendering: optimizeQuality;
+    image-rendering: optimizeQuality;
+    shape-rendering: geometricPrecision;
+    text-rendering: optimizeLegibility;
+    font-family: Montserrat, sans-serif;
+}
+
+:root {
+    --accentColor: rgb(188, 173, 230);
+    --accentColorHover: rgb(188, 173, 230);
+}
+
+head, script, noscript {
+    display: none;
+}
+
+html, body {
+    width: 100vw;
+    height: 100vh;
+    min-width: 100vw;
+    min-height: 100vh;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+a {
+    text-decoration: none;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+form input[type="text"], form input[type="password"], form input[type="email"] {
+    width: 350px;
+    text-indent: 5px;
+    height: 40px;
+    outline: none;
+    border-radius: 5px;
+    border: var(--accentColorHover) solid 1px;
+}
+
+form input::placeholder {
+    font-size: 16px;
+    color: black;
+}
+
+form input:valid {
+    font-size: 16px;
+    font-weight: 600;
+    color: black;
+}
+
+form input[type="email"]:invalid {
+    font-size: 16px;
+    color: rgb(255, 0, 0);
+}
+
+form input[type="file"] {
+    width: 350px;
+    background: none;
+}
+
+form input[type="file"]::file-selector-button, form input[type="submit"] {
+    width: 350px;
+    height: 40px;
+    outline: none;
+    border-radius: 5px;
+    border: var(--accentColorHover) solid 1px;
+    cursor: pointer;
+    background-color: var(--accentColor);
+    font-size: 16px;
+    text-align: left;
+    text-indent: 5px;
+    color: rgb(0, 0, 0);
+    transition: 0.5s;
+    font-weight: 600;
+}
+
+form input[type="file"]::file-selector-button:hover, form input[type="submit"]:hover {
+    background-color: var(--accentColorHover);
+    transition: 0.5s;
+}
+
